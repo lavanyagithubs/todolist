@@ -1,0 +1,29 @@
+<form #formRef="ngForm" (ngSubmit)="onsub(formRef)">
+<div class="form-group d-flex">
+    <select name="level" id="level" ngModel>
+      <option [value]=v *ngFor="let v of levels;let i=index">{{v}}</option>
+    </select>
+</div>
+<button class="btn btn-success" (click)="start()">start</button>
+</form>
+<div *ngIf="levelstatus">
+<form #formRef="ngForm" (ngSubmit)="onSubmit(formRef)">
+<div *ngFor="let q of questions" class="mt-5">
+    <div *ngIf="levelstatus && (SelectedLevel.level==q.level)">
+    {{q.question}}
+    <div *ngFor="let option of q.options">
+        <div class="form-check form-check-inline"> 
+            <input type="radio" [name]=q.questionno [id]=q.questionno class="form-check-input" [value]=option ngModel>
+            <label for="q.questionno" class="form-check-label">{{option}}</label>
+        </div>
+    </div>
+    <div *ngIf="status && (q.result=='wrong')" class="text-danger">correct answer is {{q.answer}}</div>
+    <div *ngIf="status && (q.result=='right')"class="text-success">correct answer</div>
+    </div>   
+</div>
+<button class="btn btn-success">submit</button>
+<div *ngIf="status">
+    <h5 class="text-center text-warning mt-3">Your Score is {{count}}</h5>
+</div>
+</form>
+</div>

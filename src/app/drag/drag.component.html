@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+      <div draggable class="card col-md-5 mt-5" style="width: 500px;height:250px;border:1px solid black">
+          <div class="mt-2">
+              This can be dragged anywhere
+          </div>
+      </div>
+      
+      <div class="col-md-1"></div>
+
+      <!-- Dragged horizontally only-->
+      <div class="col-md-5 mt-5 ml-5" style="width: 500px;height:250px;border:1px solid black">
+          <div class="card mt-3">
+              <div class="card-text">
+                  This can be dragged only horizontally (x-axis)
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-5 mt-5" style="width: 500px;height:250px;border:1px solid black">
+          <div class="card mt-2">
+              <li draggable [dragHandle]="'.drag-handle'">
+                  This card is 'Not' Draggable unless by the handle only.
+                  <div class="pull-right"><i class="drag-handle fa fa-bars fa-lg" aria-hidden="true"></i></div>
+              </li>
+          </div>
+  
+          <div class="card mt-3">
+              <li draggable>
+                  This card is Draggable by list item
+              </li>
+          </div>
+          <!--long scrollable content -->
+          <div class="card mt-3">
+              <div class="card-text" style="overflow: scroll;width: 480px;height: 110px;">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quia labore, voluptatum totam harum
+                  repudiandae. In dicta, molestiae ullam alias voluptates modi quae numquam, nobis repellat est minima
+                  cumque optio. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi fuga repellat iure,
+                  accusantium totam at molestiae labore eaque, placeat magni, esse eveniet officiis enim modi fugit quod
+                  aliquid ipsa exercitationem.
+              </div>
+          </div>
+  </div> 
+  <div class="col-md-1"></div>
+  <div class="col-md-5 mt-5" style="width: 500px;height:250px;border:1px solid black">
+      <!-- Can't Drag Here -->
+      <div class="card mt-3">
+          <div class="card-text">
+              Can't Drag Here
+          </div>
+      </div>
+  </div>   
+</div>
